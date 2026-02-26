@@ -32,9 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b47fed4d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -60,6 +61,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Estimating_Par_Yields';</script>
+    <script src="_static/open_new_tab.js?v=9fade34f"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Summarizing The Results of Calculating Par Yields" href="Chapter_Five_Summary.html" />
@@ -175,7 +177,11 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Concepts of Fixed Income: Chapter Five</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Interacting%20With%20Jupyter%20Books.html">Working with Jupyter Books</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Concepts of Fixed Income: Chapter Five</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter_Five_Highlights.html">Par Yields</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Define_Par_Yields.html">Definition Of Par Yield</a></li>
@@ -184,6 +190,15 @@
 <li class="toctree-l2"><a class="reference internal" href="imported_functions_Five.html">Functions Imported by Chapter Five.</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hub &amp; Other Chapters Of Basic Concepts Of Fixed Income</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Volume-Three-Hub/">Hub For Basic Concepts Of Fixed Income</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-1/">Chapter One: Basic Bond Concepts and the Term Structure of Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-2-Chap-3/">Chapters Two and Three: Accrued Interest and Bond Pay Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-4/">Chapters Four: Bootstrapping The Term Structure With Coupon Bonds</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-6/">Chapter Six: Yield To Maturity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-7/">Chapter Seven: Measuring Interest Rate Risk With Duration</a></li>
 </ul>
 
     </div>
@@ -415,7 +430,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-longest-maturity-bond-to-calculate-par-yields">Using the longest maturity bond to calculate Par Yields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-modules-and-functions">Importing libraries, modules, and functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-notebook">Preparing the Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-modules-and-functions">Importing libraries, modules, and functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-custom-module-and-importing-functions">Adding a custom module and importing functions</a></li>
 </ul>
 </li>
@@ -436,6 +452,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-comparison">Summarizing the comparison</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-exercise"><span style="text-align: left; color:green; font-family: 'Franklin Gothic Medium', sans-serif; margin-top: 1.0em; margin-bottom: 0em; font-style: italic;">Chapter Exercise</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-a-deeper-dive-with-gemini"><font color="green">Take a deeper dive with Gemini</font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-suggestions-to-get-you-started">Some suggestions to get you started.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-link-where-you-can-copy-and-paste-the-questions">Here is the link where you can copy and paste the questions</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -455,8 +476,10 @@ document.write(`
 <p>To ensure par yield estimates are consistently calculated at six-month intervals, we base our analysis on forward prices beginning January 31<span class="math notranslate nohighlight">\(^{st}\)</span> 2025. This approach results in “forward par yields,”; calculations performed ten days after the bond price settlement date.  Other examples coordinate the settlement dates with maturity dates.</p>
 <p>As outlined in Chapter One, forward rates are derived from the differences in the natural logarithm of zero prices. In a similar fashion, forward zero prices are calculated by dividing the longer maturity zero price by the shorter one. In the January 31<span class="math notranslate nohighlight">\(^{st}\)</span> 2030 example, all zero prices used for calculating the par yields are normalized by 0.998886-the January 31<span class="math notranslate nohighlight">\(^{st}\)</span> 2025 zero price.</p>
 </section>
+<section id="preparing-the-notebook">
+<h2>Preparing the Notebook<a class="headerlink" href="#preparing-the-notebook" title="Link to this heading">#</a></h2>
 <section id="importing-libraries-modules-and-functions">
-<h2>Importing libraries, modules, and functions<a class="headerlink" href="#importing-libraries-modules-and-functions" title="Link to this heading">#</a></h2>
+<h3>Importing libraries, modules, and functions<a class="headerlink" href="#importing-libraries-modules-and-functions" title="Link to this heading">#</a></h3>
 <p>As in earlier chapters of the volume, modules that are included in the standard Python library are imported. When necessary, other modules or libraries are installed before they are imported.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import sys
 import requests
@@ -502,21 +525,22 @@ except:
 </div>
 </div>
 </div>
+</section>
 <section id="adding-a-custom-module-and-importing-functions">
 <h3>Adding a custom module and importing functions<a class="headerlink" href="#adding-a-custom-module-and-importing-functions" title="Link to this heading">#</a></h3>
 <p>The notebook utilizes the custom module, <strong>module_basic_concepts_fixed_income</strong>, sourced from Dropbox and named <strong>basic_concepts_fixed_income</strong>. This module provides three core functions to streamline the analysis and focus on financial concepts:</p>
 <ul class="simple">
-<li><p><strong>accrued_interest</strong> (Chapter Two): This function calculates the accrued interest on a settlement date.</p>
+<li><p><strong>accrued_interest</strong> (<a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-2-Chap-3/Chapter_Two_Accrued_Interest.html#calculating-accrued-interest-for-five-bonds-dataframe">Chapter Two</a>): This function calculates the accrued interest on a settlement date.</p>
 <ul>
 <li><p><a class="reference external" href="https://patrickjhess.github.io/Imported-Functions/accrued_interest.html#accrued-interest-is-a-helper-function-that-calculates-accrued-interest">View Details</a></p></li>
 </ul>
 </li>
-<li><p><strong>create_payoff_matrix</strong> (Chapter Four ): This function calculates the payoff matrix required to bootstrap the term structure with coupon bonds.</p>
+<li><p><strong>create_payoff_matrix</strong> (<a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-4/Creating_The_Payoff_Matrix.html#the-create-payoff-matrix-function-is-demonstrated-with-the-eleven-bonds-of-the-sample-bonds-dataframe">Chapter Four</a>): This function calculates the payoff matrix required to bootstrap the term structure with coupon bonds.</p>
 <ul>
 <li><p><a class="reference external" href="https://patrickjhess.github.io/Imported-Functions/create_payoff_matrix.html">View Details</a></a></p></li>
 </ul>
 </li>
-<li><p><strong>bond_pay_data</strong> (Chapter Three): Returns the payment dates and amounts.</p>
+<li><p><strong>bond_pay_data</strong> (<a class="reference external" href="https://patrickjhess.github.io/Vol-3-Chap-2-Chap-3/Bond_Pay_Dates.html#bond-payment-dates">Chapter Three</a>):: Returns the payment dates and amounts.</p>
 <ul>
 <li><p><a class="reference external" href="https://patrickjhess.github.io/Imported-Functions/bond_pay_data.html#bond-pay-data-helper-function">View Details</a></p></li>
 </ul>
@@ -804,10 +828,10 @@ except:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10999/490079655.py:22: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_23352/490079655.py:22: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
 To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
   zero_prices_304,ss2_304,rank_304,colInfo_304=np.linalg.lstsq(payoffs_304,transaction_prices)
-/tmp/ipykernel_10999/490079655.py:32: RuntimeWarning: divide by zero encountered in true_divide
+/tmp/ipykernel_23352/490079655.py:32: RuntimeWarning: divide by zero encountered in true_divide
   forward_rates_304=-np.diff(np.log(zero_prices_304))/np.diff(maturity_years)
 </pre></div>
 </div>
@@ -958,8 +982,8 @@ To use the future default and silence this warning we advise to pass `rcond=None
 <li><p><strong>freq</strong> assigned 2 for semi-annual payment frequency.</p></li>
 </ul>
 <p>The function returns arrays of payment dates and amounts.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pay_dates_all</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">bond_pay_data</span><span class="p">(</span><span class="n">maturity</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="n">settlement</span><span class="o">=</span><span class="n">settlement</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pay_dates_all</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pay_data</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">bond_pay_data</span><span class="p">(</span><span class="n">maturity</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="n">settlement</span><span class="o">=</span><span class="n">settlement</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pay_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1610,6 +1634,21 @@ Calculate the par yields for the following bonds:
 </div>
 <p>see <a class="reference external" href="https://patrickjhess.github.io/Hints-Results/Chapter_Five_Hints.html#chapter-exercise">Chapter Five Hints: Calculate the par yields for the following bonds.</a>, and check the <a class="reference external" href="https://patrickjhess.github.io/Hints-Results/Chapter_Five_Results.html#chapter-exercise">expected results here</a>.</p>
 </section>
+<section id="take-a-deeper-dive-with-gemini">
+<h2><font color='green'>Take a deeper dive with Gemini</font><a class="headerlink" href="#take-a-deeper-dive-with-gemini" title="Link to this heading">#</a></h2>
+<section id="some-suggestions-to-get-you-started">
+<h3>Some suggestions to get you started.<a class="headerlink" href="#some-suggestions-to-get-you-started" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>How are par yields related to the term structure?</strong></p></li>
+<li><p><strong>If a corporation issues a bond with a coupon equal to the par yields matching its nmaturity, will the bond sell for is par value?</strong></p></li>
+<li><p><strong>If a corporation issues a bond with a coupon equal to the maturity-matching par yield, will the bond sell for is par value?</strong></p></li>
+<li><p><strong>When buying a bond, should I expect my returns to be related to the bond’s coupon or the maturity-matching par yield?</strong></p></li>
+</ol>
+</section>
+<section id="here-is-the-link-where-you-can-copy-and-paste-the-questions">
+<h3><a class="reference external" href="https://gemini.google.com">Here is the link where you can copy and paste the questions</a><a class="headerlink" href="#here-is-the-link-where-you-can-copy-and-paste-the-questions" title="Link to this heading">#</a></h3>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1677,7 +1716,8 @@ Calculate the par yields for the following bonds:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-longest-maturity-bond-to-calculate-par-yields">Using the longest maturity bond to calculate Par Yields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-modules-and-functions">Importing libraries, modules, and functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-notebook">Preparing the Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-modules-and-functions">Importing libraries, modules, and functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-custom-module-and-importing-functions">Adding a custom module and importing functions</a></li>
 </ul>
 </li>
@@ -1698,6 +1738,11 @@ Calculate the par yields for the following bonds:
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-comparison">Summarizing the comparison</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-exercise"><span style="text-align: left; color:green; font-family: 'Franklin Gothic Medium', sans-serif; margin-top: 1.0em; margin-bottom: 0em; font-style: italic;">Chapter Exercise</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-a-deeper-dive-with-gemini"><font color="green">Take a deeper dive with Gemini</font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-suggestions-to-get-you-started">Some suggestions to get you started.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-link-where-you-can-copy-and-paste-the-questions">Here is the link where you can copy and paste the questions</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
